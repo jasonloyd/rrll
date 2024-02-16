@@ -19,14 +19,13 @@ MEDIA_ROOT = ''
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-RECAPTCHA_PUBLIC_KEY = '6Ldf-W4pAAAAABm8MhIf3inzJKeXcxTUYliVrc_n' # keep in env var
-RECAPTCHA_PRIVATE_KEY = '6Ldf-W4pAAAAAFYizlO3nEL4CwUvxw4XJmPX36pk' # keep in env var
+RECAPTCHA_PUBLIC_KEY = os.environ('RECAP_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ('RECAP_PRIVATE_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q#41lllfz33!^%!1^pzn7kbgqll0z2iq=d%#92l(4kv9u8zlb5'
+SECRET_KEY = os.environ('APP_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,8 +35,8 @@ ALLOWED_HOSTS = []
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'the.jason.loyd@gmail.com' # keep this in env var
-EMAIL_HOST_PASSWORD = 'xbot vybs etmg hxke' # keep this in env var
+EMAIL_HOST_USER = os.environ('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ('EMAIL_TOKEN')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
