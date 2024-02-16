@@ -12,4 +12,10 @@ def schedule(request):
     return render(request, 'schedule.html', {}) 
 
 def safety(request):
-    return render(request, 'safety.html', {}) 
+    return render(request, 'safety.html', {})
+
+def news(request):
+    return render(request, 'news.html', {})
+
+def registration(request):
+    return render(request, 'registration.html', {})

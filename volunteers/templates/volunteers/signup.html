@@ -16,7 +16,7 @@
 <form id="signup-form" method="POST" action="{% url 'volunteers:signup' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
-    <button class="btn btn-sm btn-danger">Submit</button>
+    <button class="btn btn-danger">Submit</button>
 </form>
 <a href="{% url 'volunteers:home' %}">All Volunteers</a>
 {% endblock %}

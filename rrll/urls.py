@@ -31,6 +31,8 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("schedule/", views.schedule, name="schedule"),
     path("safety/", views.safety, name="safety"),
+    path("news/", views.news, name="news"),
+    path("registration/", views.registration, name="registration"),
     path('admin/', admin.site.urls),
     re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/assets/style/favicon.ico')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

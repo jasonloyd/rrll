@@ -5,9 +5,6 @@
 {% block header_title %}Roadrunner Little League{% endblock %}
 {% block header_content %}
 T-Ball through Junior Divisions available. Register today!
-<div style="padding: 5px;">
-    <button type="button" class="btn btn-danger">Register Here</button>
-</div>
 {% endblock %}
 
 {%block content %}
@@ -63,7 +60,7 @@ T-Ball through Junior Divisions available. Register today!
                     Roadrunner is pleased to announce 2024 registration. We will be offering T-Ball (beginning at age 4)
                     and baseball programs.
                 </div>
-                <button type="button" class="w-100 btn btn-lg btn-outline-danger">Learn More</button>
+                <a href="{% url 'registration' %}" role="button" class="w-100 btn btn-lg btn-outline-danger">Learn More</a>
             </div>
         </div>
     </div>

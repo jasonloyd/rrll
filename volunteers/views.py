@@ -44,7 +44,7 @@ def signup(request):
             form.save()
             subject = "RRLL Volunteer Signup Successful"
             message = request.POST['first_name'] + ", thank you for volunteering! You will receive an email from JDP shortly. Check the volunteers page for volunteer status."
-            send_mail(subject, message, EMAIL_HOST_USER, [EMAIL_HOST_USER], True)
+            send_mail(subject, message, EMAIL_HOST_USER, [request.POST['email_address'], EMAIL_HOST_USER], True)
             return redirect('volunteers:success')
         else:
             form = SignupForm()
