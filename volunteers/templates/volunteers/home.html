@@ -1,0 +1,36 @@
+{% extends "base_template.html" %}
+
+{% block title %}Home{% endblock %}
+{% block header_title %}Volunteers{% endblock %}
+{% block header_content %}{% endblock %}
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Submitted</th>
+            <th scope="col">Status</th>
+            <th scope="col">Abuse Awareness Certificate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for volunteer in volunteer_list %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{volunteer.first_name}}</td>
+            <td>{{volunteer.last_name}}</td>
+            <td>{{volunteer.created_at}}</td>
+            <td>{{volunteer.background_check_status}}</td>
+            <td>
+                <a href="{{ volunteer.abuse_awareness_certificate.url }}">{{ volunteer.abuse_awareness_certificate.name }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div>
+    <a href="{% url 'volunteers:signup' %}" class="w-20 btn btn-danger" role="button">Signup</a>
+</div>
+{% endblock %}

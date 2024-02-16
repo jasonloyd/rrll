@@ -1,0 +1,124 @@
+{% extends "base_template.html" %}
+
+{% block title %}Roadrunner Little League{% endblock %}
+
+{% block header_title %}Roadrunner Little League{% endblock %}
+{% block header_content %}
+T-Ball through Junior Divisions available. Register today!
+<div style="padding: 5px;">
+    <button type="button" class="btn btn-danger">Register Here</button>
+</div>
+{% endblock %}
+
+{%block content %}
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
+    nonce="uKTPGjNf"></script>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-danger">
+            <div class="card-header py-3 border-danger">
+                <h4 class="my-0 fw-normal">
+                    <svg fill="#000000" height="100%" width="100%" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 297 297" xml:space="preserve">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M47.156,188.376c0,2.861,1.109,14.855,9.212,29.09c6.86,12.052,19.88,26.147,43.843,29.262v40.243 c0,5.538,4.49,10.029,10.029,10.029c5.538,0,10.028-4.491,10.028-10.029v-49.644c0-5.538-4.49-10.029-10.028-10.029 c-16.487,0-28.643-6.465-36.128-19.216c-5.521-9.402-6.922-17.345-6.922-20.844c0-21.168,0-82.294,0-82.294 c0-1.782,0-6.519,8.237-6.519c8.235,0,8.235,4.736,8.235,6.519v34.548c0,2.736,1.117,5.354,3.095,7.246 c1.977,1.891,4.639,2.905,7.374,2.773c0.024-0.011,5.862,0.022,13.244,4.191c11.333,6.402,20.478,19.249,26.445,37.151 c1.752,5.255,7.432,8.097,12.686,6.344c5.255-1.752,8.095-7.432,6.343-12.686c-12.976-38.932-35.79-50.37-49.128-53.701V38.037 c0-2.17,0-5.803,8.236-5.803c8.235,0,8.235,3.633,8.235,5.803v54.73c0,5.539,4.491,10.029,10.029,10.029s10.028-4.49,10.028-10.029 V25.86c0-2.17,0-5.803,8.236-5.803c8.235,0,8.235,3.633,8.235,5.803v66.907c0,5.539,4.491,10.029,10.029,10.029 s10.029-4.49,10.029-10.029v-54.73c0-2.17,0-5.803,8.235-5.803c8.236,0,8.236,3.633,8.236,5.803v71.278 c0,5.538,4.491,10.029,10.029,10.029c5.539,0,10.029-4.491,10.029-10.029V71.849c0-1.782,0-6.519,8.236-6.519 c8.236,0,8.244,4.736,8.244,6.519v116.402c0.011,0.177,0.717,18.087-9.919,29.341c-6.086,6.441-15.135,9.706-26.894,9.706 c-5.539,0-10.029,4.491-10.029,10.029v49.644c0,5.538,4.49,10.029,10.029,10.029c5.538,0,10.028-4.491,10.028-10.029v-40.253 c12.868-1.712,23.415-6.855,31.443-15.35c15.825-16.745,15.516-40.586,15.391-43.899V71.849c0-15.647-11.636-26.577-28.294-26.577 c-2.912,0-5.667,0.342-8.236,0.977v-8.211c0-15.469-11.371-25.86-28.295-25.86c-3.986,0-7.66,0.583-10.954,1.667 C169.732,5.253,160.514,0,148.487,0c-12.028,0-21.245,5.253-25.575,13.844c-3.294-1.084-6.968-1.667-10.954-1.667 c-16.924,0-28.295,10.392-28.295,25.86v41.307c-2.569-0.635-5.324-0.976-8.235-0.976c-16.66,0-28.295,10.93-28.295,26.577 C47.132,104.944,47.156,166.737,47.156,188.376z">
+                            </path>
+                        </g>
+                    </svg>
+                </h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">Volunteer</h1>
+                <div class="mt-3 mb-4">
+                    Volunteers are the lifeblood of Little League! Every aspect of Little League is dependent upon the
+                    work of dedicated volunteers, and every person helping makes an enormous difference!
+                </div>
+                <a href="{% url 'volunteers:home' %}" role="button" class="w-100 btn btn-lg btn-danger">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">
+                    <svg fill="#000000" viewBox="0 0 16 16" id="register-16px" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path id="Path_184" data-name="Path 184"
+                                d="M57.5,41a.5.5,0,0,0-.5.5V43H47V31h2v.5a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5V31h2v.5a.5.5,0,0,0,1,0v-1a.5.5,0,0,0-.5-.5H55v-.5A1.5,1.5,0,0,0,53.5,28h-3A1.5,1.5,0,0,0,49,29.5V30H46.5a.5.5,0,0,0-.5.5v13a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5v-2A.5.5,0,0,0,57.5,41ZM50,29.5a.5.5,0,0,1,.5-.5h3a.5.5,0,0,1,.5.5V31H50Zm11.854,4.646-2-2a.5.5,0,0,0-.708,0l-6,6A.5.5,0,0,0,53,38.5v2a.5.5,0,0,0,.5.5h2a.5.5,0,0,0,.354-.146l6-6A.5.5,0,0,0,61.854,34.146ZM54,40V38.707l5.5-5.5L60.793,34.5l-5.5,5.5Zm-2,.5a.5.5,0,0,1-.5.5h-2a.5.5,0,0,1,0-1h2A.5.5,0,0,1,52,40.5Zm0-3a.5.5,0,0,1-.5.5h-2a.5.5,0,0,1,0-1h2A.5.5,0,0,1,52,37.5ZM54.5,35h-5a.5.5,0,0,1,0-1h5a.5.5,0,0,1,0,1Z"
+                                transform="translate(-46 -28)"></path>
+                        </g>
+                    </svg>
+                </h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">Registration
+                </h1>
+                <div class="mt-3 mb-4">
+                    Roadrunner is pleased to announce 2024 registration. We will be offering T-Ball (beginning at age 4)
+                    and baseball programs.
+                </div>
+                <button type="button" class="w-100 btn btn-lg btn-outline-danger">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">
+                    <svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #020202;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 1.91px;
+                                    }
+                                </style>
+                            </defs>
+                            <path class="cls-1"
+                                d="M21.55,8.18V22.5H14.86A2.86,2.86,0,0,1,12,19.64h0A2.86,2.86,0,0,1,9.14,22.5H2.45V8.18A2.86,2.86,0,0,0,5.32,5.32V1.5H18.68V5.32A2.86,2.86,0,0,0,21.55,8.18Z">
+                            </path>
+                            <polygon class="cls-1" points="12 10.09 8.18 1.5 15.82 1.5 12 10.09"></polygon>
+                            <line class="cls-1" x1="12" y1="19.64" x2="12" y2="10.09"></line>
+                            <line class="cls-1" x1="2.45" y1="12.95" x2="9.14" y2="12.95"></line>
+                            <line class="cls-1" x1="2.45" y1="17.73" x2="9.14" y2="17.73"></line>
+                            <line class="cls-1" x1="14.86" y1="12.95" x2="21.55" y2="12.95"></line>
+                            <line class="cls-1" x1="14.86" y1="17.73" x2="21.55" y2="17.73"></line>
+                        </g>
+                    </svg>
+                </h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">Safety
+                </h1>
+                <div class="mt-3 mb-4">
+                    Access safety resources including the recorded safety clinic and accident tracking form.
+                </div>
+                <a href="{% url 'safety' %}" role="button" class="w-100 btn btn-lg btn-outline-danger">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+    <h2 style="padding-bottom: 20px;text-align: center;" class="card-title pricing-card-title">Roadrunner Facebook Feed
+    </h2>
+    <div class="fb-page" data-href="https://www.facebook.com/RoadrunnerLittleLeagueAlbuquerqueNM"
+        data-tabs="timeline,events" data-width="500" data-height="" data-small-header="false"
+        data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+        <blockquote cite="https://www.facebook.com/RoadrunnerLittleLeagueAlbuquerqueNM" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/RoadrunnerLittleLeagueAlbuquerqueNM"> RRLL Facebook Feed</a>
+        </blockquote>
+    </div>
+</div>
+{% endblock %}

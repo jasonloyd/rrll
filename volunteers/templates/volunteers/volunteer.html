@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+
+{% block header_title %}Volunteer Details{% endblock %}
+{% block header_content %}{% endblock %}
+{% block content %}
+<p>First Name: {{volunteer.first_name}}</p>
+<p>Last Name:  {{volunteer.last_name}}</p>
+<p>Submitted:  {{volunteer.created_at}}</p>
+<p>Status:     {{volunteer.background_check_status}}</p>
+<p><a href="{{ volunteer.abuse_awareness_certificate.url }}">{{ volunteer.abuse_awareness_certificate.name }}</a></p>
+<p><a href="{% url 'volunteers:home' %}" >All Volunteers</a></p>
+{% endblock %}

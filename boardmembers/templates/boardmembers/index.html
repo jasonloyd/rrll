@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+
+{% block title %}Board{% endblock %}
+{% block header_title %}Board of Directors - {% now "Y" %}{% endblock %}
+{% block header_content %}{% endblock %}
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Position</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for boardmember in boardmember_list %}
+        <tr>
+            <td>{{boardmember.position}}</td>
+            <td>{{boardmember.first_name}} {{boardmember.last_name}}</td>
+            <td>{{boardmember.phone_number}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
