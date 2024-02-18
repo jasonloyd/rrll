@@ -17,7 +17,13 @@
     </thead>
     <tbody>
         {% for volunteer in volunteer_list %}
-        <tr>
+        {% if volunteer.background_check_status == "pending" %}
+        <tr class="table-warning">
+        {% elif volunteer.background_check_status == "inactive" %}
+        <tr class="table-danger">
+        {% else %}
+        <tr class="table-success">
+        {% endif %}
             <th scope="row">{{ forloop.counter }}</th>
             <td>{{volunteer.first_name}}</td>
             <td>{{volunteer.last_name}}</td>
