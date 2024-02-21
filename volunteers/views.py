@@ -1,3 +1,11 @@
+import datetime as dt
+from xml.etree import ElementTree
+
+from django.db.transaction import atomic, non_atomic_requests
+
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+
 from django.shortcuts import get_object_or_404, render, redirect
 
 from django.core.mail import send_mail, EmailMessage
@@ -9,7 +17,7 @@ from django.views import generic
 from django.utils import timezone
 
 from .forms import SignupForm
-from .models import Volunteer
+from .models import Volunteer, VolunteerStatusMessage
 from rrll.settings import EMAIL_HOST_USER
 
 
@@ -50,3 +58,31 @@ def signup(request):
             form = SignupForm()
             error_messages.append('Invalid captcha entry, please try again.')
     return render(request, 'volunteers/signup.html', {'form' : SignupForm, 'error_messages': error_messages})
+
+@csrf_exempt
+@require_POST
+@non_atomic_requests
+def volunteer_status_webhook(request):
+    # do I need to give them a token? do they require it?
+    """
+    provided_token = request.headers.get("Jdp-Webhook-Token", "")
+    if not compare_digest(provided_token, settings.JDP_WEBHOOK_TOKEN):
+        return HttpResponseForbidden(
+            "Incorrect token in Jdp-Webhook-Token header.",
+            content_type="text/plain",
+        )
+    """
+    VolunteerStatusMessage.objects.filter(
+        received_at__lte=timezone.now() - dt.timedelta(days=7)
+    ).delete()
+    payload = ElementTree.fromstring(request.body)
+    VolunteerStatusMessage.objects.create()
+    process_webhook_payload(payload)
+    return HttpResponse(status=204)
+
+
+@atomic
+def process_webhook_payload(payload):
+    # TODO: implement
+    print("handling webhook payload")
+    print(payload)

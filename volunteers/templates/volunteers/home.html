@@ -10,6 +10,7 @@
             <th scope="col">#</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Role</th>
             <th scope="col">Submitted</th>
             <th scope="col">Status</th>
             <th scope="col">Abuse Awareness Certificate</th>
@@ -27,6 +28,7 @@
             <th scope="row">{{ forloop.counter }}</th>
             <td>{{volunteer.first_name}}</td>
             <td>{{volunteer.last_name}}</td>
+            <td>{{volunteer.volunteer_role}}</td>
             <td>{{volunteer.created_at}}</td>
             <td>{{volunteer.background_check_status}}</td>
             <td>
