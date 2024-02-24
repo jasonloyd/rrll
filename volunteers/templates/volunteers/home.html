@@ -12,7 +12,9 @@
 <script src="../static/assets/js/dataTables.bootstrap5.js"></script>
 <script>
     $(document).ready(function () {
-        new DataTable('#volunteers');
+        new DataTable('#volunteers', {
+            order: [[3, 'desc']]
+        });
     });
 </script>
 <div>
