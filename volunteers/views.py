@@ -22,7 +22,7 @@ from rrll.settings import EMAIL_HOST_USER
 
 
 def home(request):
-    return render(request, 'volunteers/home.html', {'volunteer_list': Volunteer.objects.all()})
+    return render(request, 'volunteers/home.html', {'volunteer_list': Volunteer.objects.order_by('-created_at')})
 
 def success(request):
     return render(request, 'volunteers/success.html', {})

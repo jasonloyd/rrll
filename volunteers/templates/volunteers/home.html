@@ -4,40 +4,49 @@
 {% block header_title %}Volunteers{% endblock %}
 {% block header_content %}{% endblock %}
 {% block content %}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Submitted</th>
-            <th scope="col">Status</th>
-            <th scope="col">Abuse Awareness Certificate</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for volunteer in volunteer_list %}
-        {% if volunteer.background_check_status == "pending" %}
-        <tr class="table-warning">
-        {% elif volunteer.background_check_status == "inactive" %}
-        <tr class="table-danger">
-        {% else %}
-        <tr class="table-success">
-        {% endif %}
-            <th scope="row">{{ forloop.counter }}</th>
-            <td>{{volunteer.first_name}}</td>
-            <td>{{volunteer.last_name}}</td>
-            <td>{{volunteer.volunteer_role}}</td>
-            <td>{{volunteer.created_at}}</td>
-            <td>{{volunteer.background_check_status}}</td>
-            <td>
-                <a href="{{ volunteer.abuse_awareness_certificate.url }}">{{ volunteer.abuse_awareness_certificate.name }}</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/style/dataTables.bootstrap5.css' %}">
+<link rel="stylesheet" href="{% static 'assets/style/dataTables.bootstrap.min.css' %}">
+<script src="../static/assets/js/jquery-3.7.1.js"></script>
+<script src="../static/assets/js/dataTables.js"></script>
+<script src="../static/assets/js/dataTables.bootstrap5.js"></script>
+<script>
+    $(document).ready(function () {
+        new DataTable('#volunteers');
+    });
+</script>
+<div>
+    <table id="volunteers" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Submitted</th>
+                <th scope="col">Status</th>
+                <th scope="col">Abuse Awareness Certificate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for volunteer in volunteer_list %}
+            <tr>
+                <td>{{volunteer.first_name}}</td>
+                <td>{{volunteer.last_name}}</td>
+                <td>{{volunteer.volunteer_role}}</td>
+                <td>{{volunteer.created_at}}</td>
+                {% if volunteer.background_check_status == "pending" %}
+                <td style="background-color: rgba(255, 255, 0, 0.6) !important;color: black">{{volunteer.background_check_status}}</td>
+                {% elif volunteer.background_check_status == "inactive" %}
+                <td style="background-color: rgba(255, 51, 51, 0.6) !important;">{{volunteer.background_check_status}}</td>
+                {% else %}
+                <td style="background-color: rgba(45, 179, 0, 0.6) !important;">{{volunteer.background_check_status}}</td>
+                {% endif %}
+                <td><a href="{{ volunteer.abuse_awareness_certificate.url }}">{{volunteer.abuse_awareness_certificate.name}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 <div>
     <a href="{% url 'volunteers:signup' %}" class="w-20 btn btn-danger" role="button">Signup</a>
 </div>
