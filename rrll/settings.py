@@ -36,7 +36,7 @@ RECAPTCHA_PRIVATE_KEY = str(os.environ.get('RECAP_PRIVATE_KEY'))
 SECRET_KEY = str(os.environ.get('APP_SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
