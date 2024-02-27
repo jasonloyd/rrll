@@ -19,6 +19,14 @@ MEDIA_ROOT = ''
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DEVELOPMENT_MODE = False
+
+# BACKGROUND_CHECK_URL = 'https://www.jdpalatine.net/send/interchange'
+BACKGROUND_CHECK_URL = 'https://httpbin.org/post'
+BACKGROUND_CHECK_USERNAME = str(os.environ.get('BACKGROUND_CHECK_USERNAME'))
+BACKGROUND_CHECK_PASSWORD = str(os.environ.get('BACKGROUND_CHECK_PASSWORD'))
+SEND_TO_JDP = False
+
 RECAPTCHA_PUBLIC_KEY = str(os.environ.get('RECAP_PUBLIC_KEY'))
 RECAPTCHA_PRIVATE_KEY = str(os.environ.get('RECAP_PRIVATE_KEY'))
 
