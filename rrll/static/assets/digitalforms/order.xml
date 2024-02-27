@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+   <BackgroundCheck userId='XML_User_Name' password='*********'>
+      <BackgroundSearchPackage action='submit' type='PRODUCTION'>
+         <ReferenceId></ReferenceId>
+         <PersonalData>
+            <PersonName>
+               <GivenName></GivenName>
+               <MiddleName></MiddleName>
+               <FamilyName></FamilyName>
+               <Affix></Affix>
+            </PersonName>
+            <DemographicDetail>
+                <GovernmentId countryCode='US' issuingAuthority='SSN'></GovernmentId>
+                <Gender></Gender>
+                <DateOfBirth></DateOfBirth>
+            </DemographicDetail>
+            <PostalAddress>
+                <CountryCode></CountryCode>
+                <PostalCode></PostalCode>
+                <Region></Region>
+                <Municipality></Municipality>
+                <DeliveryAddress>
+                    <AddressLine></AddressLine>
+                </DeliveryAddress>
+            </PostalAddress>
+            <EmailAddress></EmailAddress>
+            <Telephone></Telephone>
+         </PersonalData>
+         <Screenings>
+            <AdditionalItems type='x:interface'>
+               <Text>APPLICANT</Text>
+            </AdditionalItems>
+            <AdditionalItems type='x:integration_type'>
+               <Text>Roadrunner Little League</Text>
+            </AdditionalItems>
+         </Screenings>
+      </BackgroundSearchPackage>
+   </BackgroundCheck>
